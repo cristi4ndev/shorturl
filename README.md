@@ -64,4 +64,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-<a href="http://http://127.0.0.1:8000"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="http://127.0.0.1:8000"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
