@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('clicks', function (Blueprint $table) {
             $table->id();
             $table->string('user_agent')->unique();
+            $table->string('referrer')->unique();
             $table->unsignedBigInteger('link_id');
             //Localization
             $table->ipAddress('ip')->default('undefined');

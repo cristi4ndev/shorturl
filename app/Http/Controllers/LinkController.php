@@ -13,6 +13,14 @@ class LinkController extends Controller
     public function index()
     {
         //
+        // $userAgent = $request->header('User-Agent');
+        // $ip = $request->ip();
+        
+        // $location = Location::get('79.116.207.237');
+        // var_dump($location);
+        // $ad = new AgentDetector($userAgent);
+        //return view('welcome', compact('ad','location'));
+        return view('links.index');
     }
 
     /**
@@ -20,7 +28,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //
+        return view('links.create');
     }
 
     /**
