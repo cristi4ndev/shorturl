@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LinkRequest;
 use App\Models\Link;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class LinkController extends Controller
         //
         // $userAgent = $request->header('User-Agent');
         // $ip = $request->ip();
-        
+
         // $location = Location::get('79.116.207.237');
         // var_dump($location);
         // $ad = new AgentDetector($userAgent);
@@ -34,9 +35,15 @@ class LinkController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LinkRequest $request)
+
+    
     {
-        //
+        Link::create();
+        return response()->json(
+            [
+                'status' => 'Success'
+            ],200);
     }
 
     /**
