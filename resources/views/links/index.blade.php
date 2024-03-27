@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
 
-
             <div class="pl-16 pr-16 pt-6 pb-6 bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg flex items-center justify-center">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" class="sm:w-60">
@@ -181,18 +180,20 @@
                 <div class="flex-col flex-1">
                     <h2 class="pb-6 text-red-400 font-bold text-xl">Create New Short Link</h2>
                     <form method="POST" action="{{ route('links.store') }}">
+                        @csrf
                         <x-validation-errors class="mb-4" />
                         <div class=" gap-8 flex flex-col justify-center items-center">
                             <div class="sm:flex-row flex-col gap-10 items-center w-full  ">
-                                <label class="font-bold w-20" for="original_link">Destination</label>
+                                <label class="font-bold w-20" for="original_url">Destination</label>
                                 <input class="w-full flex-1" placeholder="https://example.com/url-too-big" type="text" name="original_link">
                             </div>
                             <div class="sm:flex-row flex-col gap-10 items-center w-full ">
-                                <label class="font-bold w-20" for="shorten_link">Short link</label>
+                                <label class="font-bold w-20" for="shorten_url">Short link</label>
                                 <select disabled>
                                     <option disabled selected>short-url.com/</option>
                                 </select>
                                 <input placeholder="desired-short-url" class="w-full flex-1" type="text" name="shorten_link">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
                             </div>
                             <x-button class="bg-red-400 rounded-lg py-2 px-4 text-white">
                                 {{ __('Create') }}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LinkRequest;
 use App\Models\Link;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LinkController extends Controller
 {
@@ -21,7 +22,9 @@ class LinkController extends Controller
         // var_dump($location);
         // $ad = new AgentDetector($userAgent);
         //return view('welcome', compact('ad','location'));
-        return view('links.index');
+        $user = Auth::user();
+    
+        return view('links.index', compact('user'));
     }
 
     /**
